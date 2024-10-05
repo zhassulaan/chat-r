@@ -68,7 +68,7 @@ function send_message() {
 .chat_window-header {
   width: 100%;
   padding: 20px;
-  border-left: 1px solid #a6a4a4;
+  border-left: 1px solid var(--clr-grey);
   background-color: var(--clr-white);
 }
 .chat_window-messages,
@@ -89,12 +89,12 @@ function send_message() {
 }
 .chat_window-message_right {
   text-align: right;
-  background-color: #dcf8c6;
+  background-color: var(--primary-chat-color);
   margin-left: auto;
 }
 .chat_window-message_left {
   text-align: left;
-  background-color: #f1f0f0;
+  background-color: var(--secondary-chat-color);
   margin-right: auto;
 }
 .chat_window-controller {

@@ -1,12 +1,13 @@
 :root {
   --clr-black: #000;
   --clr-white: #FFF;
+  --clr-grey: #A6A4A4;
   --primary-color: #3390ec;
   --dark-primary-color: hsl(209.83783783783787, 82.95964125560539%, 52.27450980392157%);
+  --primary-chat-color: #DCF8C6;
+  --secondary-chat-color: #F1F0F0;
   --background-color: #F4F4F5;
 
-  --primary-color-rgb: 51, 144, 236;
-  --light-primary-color: rgba(51, 144, 236, 0.08);
   --light-filled-primary-color: #eef6fd;
   --saved-color: #3390ec;
   --light-filled-saved-color: #7cb7f2;
@@ -194,7 +195,6 @@
   --peer-avatar-saved-top: var(--light-filled-saved-color);
   --peer-avatar-saved-bottom: var(--saved-color);
   --peer-color: var(--primary-color);
-  --peer-color-rgb: var(--primary-color-rgb);
   --avatar-color-story-unread-from: #34c76f;
   --avatar-color-story-unread-to: #3da1fd;
   --avatar-color-story-close-from: #88D93A;
