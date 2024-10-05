@@ -1,0 +1,129 @@
+<template>
+  <div class="chat_window">
+    <span class="chat_window-header">Chat with <b>{{ selected_chat }}</b></span>
+    <div class="chat_window-messages">
+      <div
+        class="chat_window-message"
+        v-for="message in messages"
+        :key="message.timestamp"
+        :class="{
+          'chat_window-message_right': message.from === current_user,
+          'chat_window-message_left': message.from !== current_user
+        }"
+      >
+        <p>{{ message.text }}</p>
+      </div>
+    </div>
+    <div class="chat_window-controller">
+      <input v-model="new_message" placeholder="Type your message..."  class="chat_window-controller-input"/>
+      <button @click="send_message" class="chat_window-controller-button">↑</button>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const props = defineProps({
+  current_user: String,
+  selected_chat: String,
+  messages: Array,
+});
+const new_message = ref('');
+const emit = defineEmits(['load_messages']);
+
+function save_message(message) {
+  let chat_history = JSON.parse(localStorage.getItem('chat_messages')) || {};
+  const chat_key = [props.current_user, props.selected_chat].sort().join('_');
+  if (!chat_history[chat_key]) {
+    chat_history[chat_key] = [];
+  }
+  chat_history[chat_key].push(message);
+  localStorage.setItem('chat_messages', JSON.stringify(chat_history));
+  emit('load_messages');
+}
+function send_message() {
+  const message = {
+    from: props.current_user,
+    to: props.selected_chat,
+    text: new_message.value,
+    timestamp: new Date().toISOString(),
+  };
+  save_message(message);
+  new_message.value = '';
+}
+</script>
+
+<style scoped>
+.chat_window {
+  position: absolute;
+  right: 0;
+  height: 100vh;
+}
+.chat_window-header,
+.chat_window-messages,
+.chat_window-controller {
+  position: inherit;
+}
+.chat_window-header {
+  width: 100%;
+  padding: 20px;
+  border-left: 1px solid #a6a4a4;
+  background-color: var(--clr-white);
+}
+.chat_window-messages,
+.chat_window-controller {
+  left: 50%;
+  transform: translate(-50%);
+}
+.chat_window-messages {
+  bottom: 64px;
+  overflow-y: auto;
+  width: 60%;
+}
+.chat_window-message {
+  max-width: 60%;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+}
+.chat_window-message_right {
+  text-align: right;
+  background-color: #dcf8c6;
+  margin-left: auto;
+}
+.chat_window-message_left {
+  text-align: left;
+  background-color: #f1f0f0;
+  margin-right: auto;
+}
+.chat_window-controller {
+  bottom: 0;
+  width: 60%;
+  border-radius: 18px;
+  background-color: var(--clr-white);
+  overflow: hidden;
+}
+.chat_window-controller-input {
+  width: 100%;
+  padding: 12px 42px 12px 10px;
+  border: 0;
+}
+.chat_window-controller-button {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background-color: #0088CC;
+  color: var(--clr-white);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.chat_window-controller-button:hover {
+  background-color: #006699;
+}
+</style>
