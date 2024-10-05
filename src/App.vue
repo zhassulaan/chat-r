@@ -59,9 +59,8 @@ onBeforeUnmount(() => {
   display: flex;
   height: 100vh;
 }
-.main_page-sidebar,
-.main_page-background {
-  width: 75%;
+.main_page-sidebar {
+  width: 25%;
 }
 .main_page-window,
 .main_page-background {
