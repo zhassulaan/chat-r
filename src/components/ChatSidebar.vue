@@ -43,15 +43,15 @@ function logout() {
       cursor: pointer;
     }
     &-searchbar {
+      transition: 0s border-color;
+      border: 1px solid var(--input-search-border-color);
+      border-radius: 22px;
       width: 100%;
       height: 42px;
       min-height: 42px;
       max-height: 42px;
       padding: 12px 16px;
-      border: 1px solid var(--input-search-border-color);
-      border-radius: 22px;
       background-color: var(--input-search-background-color);
-      transition: 0s border-color;
       line-height: var(--line-height-16);
     }
   }

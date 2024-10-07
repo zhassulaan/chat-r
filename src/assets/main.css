@@ -2,11 +2,14 @@
   --clr-black: #000;
   --clr-white: #FFF;
   --clr-grey: #A6A4A4;
+  --background-color: #F4F4F5;
+  --dark-background-color: #DCDCDC;
   --primary-color: #3390ec;
   --dark-primary-color: hsl(209.83783783783787, 82.95964125560539%, 52.27450980392157%);
   --primary-chat-color: #DCF8C6;
   --secondary-chat-color: #F1F0F0;
-  --background-color: #F4F4F5;
+  --input-search-background-color: #FFF;
+  --input-search-border-color: #DFE1E5;
   --line-height-20: 26px;
   --line-height-18: 24px;
   --line-height-16: 21px;
@@ -54,12 +57,6 @@
   --badge-text-color: #fff;
   --link-color: #00488f;
   --poll-circle-color: var(--border-color);
-  --spoiler-background-color: #e3e5e8;
-  --spoiler-draft-background-color: #d9d9d9;
-  --rlottie-vector-fill: rgba(0, 0, 0, .08);
-  --limit-line-empty-background: #F1F3F5;
-  --old-input-background-color: #F1F3F5;
-  --premium-color: #9275ff;
   --gc-background-color: #212121;
   --gc-button-leave-color: rgba(255, 89, 90, .3);
   --gc-button-unmuted-color: rgba(1, 200, 80, .2);

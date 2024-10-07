@@ -54,76 +54,76 @@ function send_message() {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .chat_window {
   position: absolute;
   right: 0;
   height: 100vh;
-}
-.chat_window-header,
-.chat_window-messages,
-.chat_window-controller {
-  position: inherit;
-}
-.chat_window-header {
-  width: 100%;
-  padding: 20px;
-  border-left: 1px solid var(--clr-grey);
-  background-color: var(--clr-white);
-}
-.chat_window-messages,
-.chat_window-controller {
-  left: 50%;
-  transform: translate(-50%);
-}
-.chat_window-messages {
-  bottom: 64px;
-  overflow-y: auto;
-  width: 60%;
-}
-.chat_window-message {
-  max-width: 60%;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 10px;
-}
-.chat_window-message_right {
-  text-align: right;
-  background-color: var(--primary-chat-color);
-  margin-left: auto;
-}
-.chat_window-message_left {
-  text-align: left;
-  background-color: var(--secondary-chat-color);
-  margin-right: auto;
-}
-.chat_window-controller {
-  bottom: 0;
-  width: 60%;
-  border-radius: 18px;
-  background-color: var(--clr-white);
-  overflow: hidden;
-}
-.chat_window-controller-input {
-  width: 100%;
-  padding: 12px 42px 12px 10px;
-  border: 0;
-}
-.chat_window-controller-button {
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 32px;
-  height: 32px;
-  background-color: #0088CC;
-  color: var(--clr-white);
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.chat_window-controller-button:hover {
-  background-color: #006699;
+  &-header,
+  &-messages,
+  &-controller {
+    position: inherit;
+  }
+  &-header {
+    width: 100%;
+    padding: 20px;
+    border-left: 1px solid var(--clr-grey);
+    background-color: var(--clr-white);
+  }
+  &-messages,
+  &-controller {
+    left: 50%;
+    transform: translate(-50%);
+  }
+  &-messages {
+    bottom: 64px;
+    overflow-y: auto;
+    width: 60%;
+  }
+  &-message {
+    max-width: 60%;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+  }
+  &-message_right {
+    text-align: right;
+    background-color: var(--primary-chat-color);
+    margin-left: auto;
+  }
+  &-message_left {
+    text-align: left;
+    background-color: var(--secondary-chat-color);
+    margin-right: auto;
+  }
+  &-controller {
+    bottom: 0;
+    width: 60%;
+    border-radius: 18px;
+    background-color: var(--clr-white);
+    overflow: hidden;
+  }
+  &-controller-input {
+    width: 100%;
+    padding: 12px 42px 12px 10px;
+    border: 0;
+  }
+  &-controller-button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    background-color: #0088CC;
+    color: var(--clr-white);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  &-controller-button:hover {
+    background-color: #006699;
+  }
 }
 </style>

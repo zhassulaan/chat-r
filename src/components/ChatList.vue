@@ -1,11 +1,12 @@
 <template>
-  <div class="chat_list">
-    <ul>
-      <li v-for="user in filtered_users" :key="user" @click="select_chat(user)">
-        {{ user }}
-      </li>
-    </ul>
-  </div>
+  <ul class="chat_list">
+    <li v-for="user in filtered_users"
+      :key="user"
+      @click="select_chat(user)"
+    >
+      {{ user }}
+    </li>
+  </ul>
 </template>
 
 <script setup>
@@ -30,16 +31,16 @@ function select_chat(user) {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .chat_list {
-  background-color: #F6F6F6;
-}
-.chat_list li {
-  padding: 16px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.chat_list li:hover {
-  background-color: #DCDCDC;
+  background-color: var(--background-color);
+  & li {
+    transition: background-color 0.3s;
+    padding: 16px 20px;
+    cursor: pointer;
+    &:hover {
+      background-color: var(--dark-background-color);
+    }
+  }
 }
 </style>
