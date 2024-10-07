@@ -18,22 +18,14 @@
   --line-height: 1.3125;
 
   --light-filled-primary-color: #eef6fd;
-  --saved-color: #3390ec;
-  --light-filled-saved-color: #7cb7f2;
   --message-out-background-color: #e3fee0;
-  --message-out-background-color-rgb: 227, 254, 224;
   --light-message-out-background-color: rgba(227, 254, 224, 0.12);
   --light-filled-message-out-background-color: #fbfefb;
   --dark-message-out-background-color: hsl(114.00000000000001, 93.75000000000003%, 81.72549019607843%);
   --message-out-primary-color: #5ca853;
-  --message-out-primary-color-rgb: 92, 168, 83;
   --light-filled-message-out-primary-color: #d8f7d4;
-  --light-danger-color: rgba(223, 63, 64, 0.08);
-  --dark-danger-color: hsl(359.625, 71.42857142857143%, 48.07843137254902%);
   --primary-text-color: #000000;
-  --primary-text-color-rgb: 0, 0, 0;
   --secondary-text-color: #707579;
-  --secondary-text-color-rgb: 112, 117, 121;
   --light-secondary-text-color: rgba(112, 117, 121, 0.08);
   --light-filled-secondary-text-color: #f3f3f4;
   --message-background-color: #ffffff;
@@ -42,12 +34,10 @@
   --dark-message-background-color: hsl(0, 0%, 92%);
   --green-color: #70b768;
   --message-highlighting-color: hsla(86.4, 43.846153%, 45.117647%, .4);
-  --message-highlighting-color-rgb: 121, 165, 65;
   --message-highlighting-alpha: 0.4;
 }
 :root {
   --body-background-color: #fff;
-  --body-background-color-rgb: 255, 255, 255;
   --background-color-true: #f4f4f5;
   --background-color: var(--background-color-true);
   --border-color: #dfe1e5;
@@ -57,9 +47,7 @@
   --input-search-background-color: #fff;
   --input-search-border-color: #dfe1e5;
   --secondary-color: #c4c9cc;
-  --warning-color: #fed85a;
   --green-color: #3ba748;
-  --green-color-rgb: 59, 167, 72;
   --avatar-online-color: var(--primary-color);
   --chatlist-status-color: var(--avatar-online-color);
   --chatlist-pinned-color: #a2abb2;
@@ -183,16 +171,13 @@
   --peer-avatar-pink-bottom: #D95574;
   --peer-avatar-archive-top: #B8C2CC;
   --peer-avatar-archive-bottom: #9EAAB5;
-  --peer-avatar-saved-top: var(--light-filled-saved-color);
-  --peer-avatar-saved-bottom: var(--saved-color);
   --peer-color: var(--primary-color);
   --avatar-color-story-unread-from: #34c76f;
   --avatar-color-story-unread-to: #3da1fd;
   --avatar-color-story-close-from: #88D93A;
   --avatar-color-story-close-to: #30B73B;
   --avatar-color-story-read: var(--secondary-color);
-  --avatar-color-top: var(--peer-avatar-saved-top);
-  --avatar-color-bottom: var(--peer-avatar-saved-bottom);
+  --avatar-color-top: var(-top);
   --avatar-border-radius-forum: 37%;
   --premium-gradient: linear-gradient(52.62deg, #6B93FF 12.22%, #976FFF 50.25%, #E46ACE 98.83%);
 }
