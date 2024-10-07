@@ -30,30 +30,26 @@ function logout() {
 }
 </script>
 
-<style scoped lang="scss">
-.sidebar {
-  background-color: var(--clr-white);
-  &-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 4px;
-    padding: 8px 12px;
-    &-button {
-      cursor: pointer;
-    }
-    &-searchbar {
-      transition: 0s border-color;
-      border: 1px solid var(--input-search-border-color);
-      border-radius: 22px;
-      width: 100%;
-      height: 42px;
-      min-height: 42px;
-      max-height: 42px;
-      padding: 12px 16px;
-      background-color: var(--input-search-background-color);
-      line-height: var(--line-height-16);
-    }
-  }
-}
+<style scoped lang="sass">
+.sidebar
+  background-color: var(--clr-white)
+  &-header
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    gap: 4px
+    padding: 8px 12px
+    &-button
+      cursor: pointer
+    &-searchbar
+      transition: 0s border-color
+      border: 1px solid var(--input-search-border-color)
+      border-radius: 22px
+      width: 100%
+      height: 42px
+      min-height: 42px
+      max-height: 42px
+      padding: 12px 16px
+      background-color: var(--input-search-background-color)
+      line-height: var(--line-height-16)
 </style>

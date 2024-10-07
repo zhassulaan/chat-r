@@ -57,81 +57,69 @@ function send_message() {
 }
 </script>
 
-<style scoped lang="scss">
-.chat_window {
-  position: absolute;
-  right: 0;
-  height: 100vh;
+<style scoped lang="sass">
+.chat_window
+  position: absolute
+  right: 0
+  height: 100vh
   &-header,
   &-messages,
-  &-controller {
-    position: inherit;
-  }
-  &-header {
-    z-index: 2;
-    border-left: 1px solid var(--clr-grey);
-    width: 100%;
-    height: 56px;
-    padding: 20px;
-    background-color: var(--clr-white);
-  }
+  &-controller
+    position: inherit
+  &-header
+    z-index: 2
+    border-left: 1px solid var(--clr-grey)
+    width: 100%
+    height: 56px
+    padding: 20px
+    background-color: var(--clr-white)
   &-messages,
-  &-controller {
-    left: 50%;
-    display: flex;
-    flex-direction: column-reverse; 
-    transform: translate(-50%);
-    width: 60%;
-  }
-  &-messages {
-    bottom: 64px;
-    max-height: calc(100vh - 120px);
-    overflow-y: scroll;
-    &-item {
-      min-width: 60%;
-      max-width: 60%;
-      padding: 10px;
-      margin: 5px;
-      border-radius: 10px;
-      &_right {
-        margin-left: auto;
-        background-color: var(--primary-chat-color);
-        text-align: right;
-      }
-      &_left {
-        margin-right: auto;
-        background-color: var(--secondary-chat-color);
-        text-align: left;
-      }
-    }
-  }
-  &-controller {
-    bottom: 0;
-    overflow: hidden;
-    border-radius: 18px;
-    background-color: var(--clr-white);
-    &-input {
-      border: 0;
-      width: 100%;
-      padding: 12px 42px 12px 10px;
-    }
-    &-button {
-      position: absolute;
-      top: 50%;
-      right: 5px;
-      transform: translateY(-50%);
-      transition: background-color 0.3s;
-      border: none;
-      border-radius: 50%;
-      width: 32px;
-      height: 32px;
-      background-color: var(--primary-color);
-      cursor: pointer;
-      color: var(--clr-white);
-      &:hover {
-        background-color: var(--dark-primary-color);
-      }
-    }
-  }
-}
+  &-controller
+    left: 50%
+    display: flex
+    flex-direction: column-reverse 
+    transform: translate(-50%)
+    width: 60%
+  &-messages
+    bottom: 64px
+    max-height: calc(100vh - 120px)
+    overflow-y: scroll
+    &-item
+      min-width: 60%
+      max-width: 60%
+      padding: 10px
+      margin: 5px
+      border-radius: 10px
+      &_right
+        margin-left: auto
+        background-color: var(--primary-chat-color)
+        text-align: right
+      &_left
+        margin-right: auto
+        background-color: var(--secondary-chat-color)
+        text-align: left
+  &-controller
+    bottom: 0
+    overflow: hidden
+    border-radius: 18px
+    background-color: var(--clr-white)
+    &-input
+      border: 0
+      width: 100%
+      padding: 12px 42px 12px 10px
+    &-button
+      position: absolute
+      top: 50%
+      right: 5px
+      transform: translateY(-50%)
+      transition: background-color 0.3s
+      border: none
+      border-radius: 50%
+      width: 32px
+      height: 32px
+      background-color: var(--primary-color)
+      cursor: pointer
+      color: var(--clr-white)
+      &:hover
+        background-color: var(--dark-primary-color)
 </style>

@@ -32,16 +32,13 @@ function select_chat(user) {
 };
 </script>
 
-<style scoped lang="scss">
-.chat_list {
-  background-color: var(--background-color);
-  &-item {
-    transition: background-color 0.3s;
-    padding: 16px 20px;
-    cursor: pointer;
-    &:hover {
-      background-color: var(--dark-background-color);
-    }
-  }
-}
+<style scoped lang="sass">
+.chat_list
+  background-color: var(--background-color)
+  &-item
+    transition: background-color 0.3s
+    padding: 16px 20px
+    cursor: pointer
+    &:hover
+      background-color: var(--dark-background-color)
 </style>
