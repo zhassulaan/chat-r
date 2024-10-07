@@ -39,7 +39,7 @@ function logout() {
 function load_messages() {
   const chat_history = JSON.parse(localStorage.getItem('chat_messages')) || {};
   const chat_key = [current_user.value, selected_chat.value].sort().join('_');
-  messages.value = chat_history[chat_key] || [];
+  messages.value = (chat_history[chat_key] || []).slice().reverse();
 }
 function select_chat(user) {
   selected_chat.value = user;

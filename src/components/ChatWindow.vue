@@ -50,8 +50,10 @@ function send_message() {
     text: new_message.value,
     timestamp: new Date().toISOString(),
   };
-  save_message(message);
-  new_message.value = '';
+  if (new_message.value !== '') {
+    save_message(message);
+    new_message.value = '';
+  }
 }
 </script>
 
@@ -76,6 +78,8 @@ function send_message() {
   &-messages,
   &-controller {
     left: 50%;
+    display: flex;
+    flex-direction: column-reverse; 
     transform: translate(-50%);
     width: 60%;
   }
@@ -84,6 +88,7 @@ function send_message() {
     max-height: calc(100vh - 120px);
     overflow-y: scroll;
     &-item {
+      min-width: 60%;
       max-width: 60%;
       padding: 10px;
       margin: 5px;
