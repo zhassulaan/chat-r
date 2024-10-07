@@ -4,12 +4,12 @@
 
     <div class="chat_window-messages">
       <div
-        class="chat_window-message"
+        class="chat_window-messages-item"
         v-for="message in messages"
         :key="message.timestamp"
         :class="{
-          'chat_window-message_right': message.from === current_user,
-          'chat_window-message_left': message.from !== current_user
+          'chat_window-messages-item_right': message.from === current_user,
+          'chat_window-messages-item_left': message.from !== current_user
         }"
       >
         <p>{{ message.text }}</p>
@@ -66,8 +66,10 @@ function send_message() {
     position: inherit;
   }
   &-header {
+    z-index: 2;
     border-left: 1px solid var(--clr-grey);
     width: 100%;
+    height: 56px;
     padding: 20px;
     background-color: var(--clr-white);
   }
@@ -79,22 +81,23 @@ function send_message() {
   }
   &-messages {
     bottom: 64px;
-    overflow-y: auto;
-  }
-  &-message {
-    max-width: 60%;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 10px;
-    &_right {
-      text-align: right;
-      background-color: var(--primary-chat-color);
-      margin-left: auto;
-    }
-    &_left {
-      margin-right: auto;
-      background-color: var(--secondary-chat-color);
-      text-align: left;
+    max-height: calc(100vh - 120px);
+    overflow-y: scroll;
+    &-item {
+      max-width: 60%;
+      padding: 10px;
+      margin: 5px;
+      border-radius: 10px;
+      &_right {
+        margin-left: auto;
+        background-color: var(--primary-chat-color);
+        text-align: right;
+      }
+      &_left {
+        margin-right: auto;
+        background-color: var(--secondary-chat-color);
+        text-align: left;
+      }
     }
   }
   &-controller {
@@ -117,11 +120,11 @@ function send_message() {
       border-radius: 50%;
       width: 32px;
       height: 32px;
-      background-color: #0088CC;
+      background-color: var(--primary-color);
       cursor: pointer;
       color: var(--clr-white);
       &:hover {
-        background-color: #006699;
+        background-color: var(--dark-primary-color);
       }
     }
   }
