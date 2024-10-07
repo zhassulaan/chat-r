@@ -7,7 +7,7 @@
     <div class="login-buttons">
       <button v-for="user in users"
         :key="user"
-        class="login-button"
+        class="login-buttons-item"
         @click="select_user(user)"
       >
         {{ user }}
@@ -53,24 +53,21 @@ function select_user(user) {
     height: 210px;
     padding: 6px;
     background-color: var(--background-color);
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-  &-button {
-    display: flex;
-    justify-content: center;
-    border: none;
-    border-radius: 8px;
-    transition: background-color .3s;
-    margin: 3% 0;
-    width: 210px;
-    padding: 10px 0;
-    background-color: var(--primary-color);
-    cursor: pointer;
-    color: #FFF;
-    &:hover {
-      background-color: var(--dark-primary-color);
+    &-item {
+      display: flex;
+      justify-content: center;
+      border: none;
+      border-radius: 8px;
+      transition: background-color .3s;
+      margin: 3% 0;
+      width: 210px;
+      padding: 10px 0;
+      background-color: var(--primary-color);
+      cursor: pointer;
+      color: #FFF;
+      &:hover {
+        background-color: var(--dark-primary-color);
+      }
     }
   }
 }

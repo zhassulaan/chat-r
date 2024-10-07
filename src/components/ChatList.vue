@@ -2,6 +2,7 @@
   <ul class="chat_list">
     <li v-for="user in filtered_users"
       :key="user"
+      class="chat_list-item"
       @click="select_chat(user)"
     >
       {{ user }}
@@ -34,7 +35,7 @@ function select_chat(user) {
 <style scoped lang="scss">
 .chat_list {
   background-color: var(--background-color);
-  & li {
+  &-item {
     transition: background-color 0.3s;
     padding: 16px 20px;
     cursor: pointer;
