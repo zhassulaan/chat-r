@@ -5,7 +5,11 @@
     <span class="login-text">Select the user from the list</span>
 
     <div class="login-buttons">
-      <button v-for="user in users" :key="user" class="login-button" @click="select_user(user)">
+      <button v-for="user in users"
+        :key="user"
+        class="login-button"
+        @click="select_user(user)"
+      >
         {{ user }}
       </button>
     </div>
@@ -23,7 +27,7 @@ function select_user(user) {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .login {
   display: flex;
   flex-direction: column;
@@ -33,41 +37,41 @@ function select_user(user) {
   height: 100%;
   background-color: var(--clr-white);
   color: var(--clr-black);
-}
-.login-icon {
-  width: 196px;
-  height: 196px;
-}
-.login-title {
-  margin: 22px 0 14px;
-}
-.login-text {
-  margin: 1rem auto 2rem;
-}
-.login-buttons {
-  height: 210px;
-  background-color: var(--background-color);
-  overflow: scroll;
-  padding: 6px;
-  border-radius: 4px;
-}
-.login-buttons::-webkit-scrollbar {
-  display: none;
-}
-.login-button {
-  display: flex;
-  justify-content: center;
-  width: 210px;
-  background-color: var(--primary-color);
-  color: #FFF;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 0;
-  margin: 3% 0;
-  cursor: pointer;
-  transition: background-color .3s;
-}
-.login-button:hover {
-  background-color: var(--dark-primary-color);
+  &-icon {
+    width: 196px;
+    height: 196px;
+  }
+  &-title {
+    margin: 22px 0 14px;
+  }
+  &-text {
+    margin: 1rem auto 2rem;
+  }
+  &-buttons {
+    overflow: scroll;
+    border-radius: 4px;
+    height: 210px;
+    padding: 6px;
+    background-color: var(--background-color);
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  &-button {
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+    transition: background-color .3s;
+    margin: 3% 0;
+    width: 210px;
+    padding: 10px 0;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    color: #FFF;
+    &:hover {
+      background-color: var(--dark-primary-color);
+    }
+  }
 }
 </style>

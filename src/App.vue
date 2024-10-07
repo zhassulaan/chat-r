@@ -27,23 +27,23 @@ const current_user = ref(localStorage.getItem('current_user') || null);
 const selected_chat = ref(null);
 const messages = ref([]);
 
-function load_messages() {
-  const chatHistory = JSON.parse(localStorage.getItem('chat_messages')) || {};
-  const chat_key = [current_user.value, selected_chat.value].sort().join('_');
-  messages.value = chatHistory[chat_key] || [];
-}
 function login(user) {
   current_user.value = user;
   localStorage.setItem('current_user', user);
-}
-function select_chat(user) {
-  selected_chat.value = user;
-  load_messages();
 }
 function logout() {
   current_user.value = null;
   selected_chat.value = null;
   localStorage.removeItem('current_user');
+}
+function load_messages() {
+  const chat_history = JSON.parse(localStorage.getItem('chat_messages')) || {};
+  const chat_key = [current_user.value, selected_chat.value].sort().join('_');
+  messages.value = chat_history[chat_key] || [];
+}
+function select_chat(user) {
+  selected_chat.value = user;
+  load_messages();
 }
 
 onMounted(() => {
@@ -54,19 +54,19 @@ onBeforeUnmount(() => {
 });
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .main_page {
   display: flex;
   height: 100vh;
-}
-.main_page-sidebar {
-  width: 25%;
-}
-.main_page-window,
-.main_page-background {
-  width: 75%;
-}
-.main_page-background {
-  height: 100%;
+  &-sidebar {
+    width: 25%;
+  }
+  &-window,
+  &-background {
+    width: 75%;
+  }
+  &-background {
+    height: 100%;
+  }
 }
 </style>
